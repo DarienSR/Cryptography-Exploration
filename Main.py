@@ -1,20 +1,31 @@
 from graphics import *
-from CaesarCipher import *
+from DisplayCaesarCipher import DisplayCaesar
+from Navigation import *
 
+# DEFAULT APPLICATION SETUP
 appName = "Exploring Cryptography"
-screenHeight = 600
-screenWidth = 600
+screenHeight = 800
+screenWidth = 1200
 
 def main():
-  screen = GraphWin(appName, screenHeight, screenWidth) # screen setup
-  
-  # Program Runs
-  CaesarCipher(screen)
+  nav = None
+  screen = GraphWin(appName, screenWidth, screenHeight) # screen setup
+  # program loop and navigation condition
+  keyString = ""
 
-  # Program Ends
+  # Navigation Initial Display
+  while keyString != "Escape":
+    if keyString == "1":
+      DisplayCaesar(screen, nav)
+      nav = Navigation(screen) # Redisplay nav
+    elif keyString == "2":
+      print("Next algo")
+    else:
+      nav = Navigation(screen)
 
-  # Pause to view result, otherwise the window will disappear
-  screen.getMouse() 
+    # Pause until input
+    keyString = screen.getKey() 
+    
   screen.close()
 
 main()
