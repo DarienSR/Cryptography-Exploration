@@ -4,9 +4,8 @@ import SetupCiphers as SP
 
 def DisplayCaesar(screen, nav):
   # Undraw Navigation
-  for x in nav:
-    x.undraw()
-
+  SP.UndrawDisplay(nav)
+  
   ALPHABET = CaesarCipher()
 
 
@@ -58,7 +57,7 @@ def DisplayCaesar(screen, nav):
     cipher.setText("Cipher Text: " + cipherText)
     
   # undraw everything
-  SP.UndrawNavigation(display)
+  SP.UndrawDisplay(display)
 
 def DisplayShiftInput(screen, FIRST_HEADING_HEIGHT, display):
   shiftByInput = Entry(Point(150, FIRST_HEADING_HEIGHT + 30), 10).draw(screen)

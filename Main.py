@@ -1,10 +1,10 @@
 from graphics import *
 from DisplayCaesarCipher import DisplayCaesar
 from Navigation import *
-
+from DisplayVigenere import *
 # DEFAULT APPLICATION SETUP
 appName = "Exploring Cryptography"
-screenHeight = 800
+screenHeight = 900
 screenWidth = 1200
 
 def main():
@@ -19,13 +19,14 @@ def main():
       DisplayCaesar(screen, nav)
       nav = Navigation(screen) # Redisplay nav
     elif keyString == "2":
-      print("Next algo")
+      DisplayVigenere(screen, nav)
+      nav = Navigation(screen) # Redisplay nav
     else:
       nav = Navigation(screen)
 
     # Pause until input
     keyString = screen.getKey() 
     
-  screen.close()
+  screen.close()  
 
 main()

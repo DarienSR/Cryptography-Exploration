@@ -8,9 +8,11 @@ def GetDefaultAlphabet():
   return list(string.ascii_lowercase)
 
 
+
+
 # FUNCTIONS CIPHER DISPLAY
 
-def UndrawNavigation(displayArr):
+def UndrawDisplay(displayArr):
   for item in displayArr:
     item.undraw()
 
@@ -21,3 +23,22 @@ def DisplayHeading(screen, cipherName, pos, display, font_size = 20):
   heading.setStyle("bold")
   display.append(heading)
   return heading
+
+def DisplayInfo(screen, display, cipherName, cipherDesc):
+  # Esc to go back
+  DisplayHeading(screen, "Press ESC to go back", (110, 100), display, 15)
+  
+  # Title
+  title = DisplayHeading(screen, cipherName, (screen.getWidth() / 2, 150), display, 36)
+  
+  # Desc
+  display.append(Text(Point(screen.getWidth() / 2, 190), cipherDesc).draw(screen))
+
+  return title
+
+
+def CreateInput(text, x, y, width, screen, display):
+  display.append(Text(Point(x, y), text).draw(screen))
+  inputText = Entry(Point(x, y + 30), width).draw(screen)
+  display.append(inputText)
+  return inputText
