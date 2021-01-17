@@ -1,0 +1,64 @@
+body {
+  margin: 0
+}
+
+#back-container {
+  width: 100%;
+  background-color: red;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#content {
+  width: 60%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#left, #right {
+  width: 40%;
+  border: 0.5rem solid black;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+#left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+}
+
+form p {
+  margin: 0;
+}
+
+button {
+  height: 100%;
+}
+
+.inline {
+  display: flex;  
+  justify-content: space-around;
+}
+
+.bold {
+  font-weight: bold;
+}

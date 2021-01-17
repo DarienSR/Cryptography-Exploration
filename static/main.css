@@ -1,0 +1,40 @@
+:root {
+  --black: #090C08;
+  --white: #F6E8EA;
+  --red: #F45B69;
+}
+
+body {
+  background: var(--black);
+  margin: 0;
+}
+
+h1 {
+  padding: 1rem;
+  text-align: center;
+  color: var(--white);
+  font-size: 4rem;
+}
+
+.link-box {
+  display: flex;
+  width: 60%;
+  margin: 3rem auto;
+}
+
+h3 {
+  color: var(--red);
+  font-size: 3rem;
+  margin: 0;
+}
+
+a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: var(--white);
+  padding-left: 1.5rem;
+}
+
+a:hover {
+  color: var(--red);
+}

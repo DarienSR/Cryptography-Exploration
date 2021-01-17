@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Vigenere Cipher</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='cipher.css')}}">
+  </head>
+  <body>
+
+    <div id="left">
+      <form action="./vigenere" method="POST">
+        <div>
+          <p class="bold">Plain Text: </p>
+          <input value="{{ data['plain_text'] }}" name="text" />
+        </div>
+
+        <div>
+          <p class="bold">Key Word: </p>
+          <input value="{{ data['keyword'] }}" name="key" />
+        </div>
+       
+        <input name="data" value="{{data}}" type="hidden" />
+        
+        <div id="button-container">
+          <button type='submit'>Update</button>
+        </div>
+        <input name="data" value="{{data}}" type="hidden" />
+      </form>
+    </div>
+
+    <h2>{{ data['name'] }} - needs styling</h2>
+
+
+    <div>
+      <p>Key Word:</p>
+      <p>{{ data['keyword'] }}</p>
+    </div>
+
+    <div>
+      <p>Plain Text:</p>
+      <p>{{ data['plain_text'] }}</p>
+    </div>
+
+    <div>
+      <p>Key Word:</p>
+      <p>{{ data['keyword_repeated'] }}</p>
+    </div>
+
+    <div>
+      <p>Cipher Text:</p>
+      <p>{{ data['cipher_text'] }}</p>
+    </div>
+
+    <div>
+      {%for i in range(0, 26) %}
+        <p>{{" ".join(data['table'][i])}}</p>
+      {% endfor %}
+    </div>
+
+
+
+
+
+  </body>
+</html>
