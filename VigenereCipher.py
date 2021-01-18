@@ -16,10 +16,6 @@ def Encrypt(table, plainText, keyWord):
   ALPHABET = list(string.ascii_lowercase)
   cipherText = ""
 
-  print("======================")
-  print(keyWord)
-  print("======================")
-
   # Traverse the length of the plainText
   temp = 0
   for idx, letter in enumerate(plainText):

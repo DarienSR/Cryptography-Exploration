@@ -62,3 +62,35 @@ button {
 .bold {
   font-weight: bold;
 }
+
+.row {
+  margin: 0;
+}
+
+#container {
+  display:flex;
+}
+
+#left-vig {
+  width: 20%;
+  border: 0.5rem solid black;
+  padding: 1rem;
+  margin: 0 auto;
+  text-align: center;
+  height: 30%;
+}
+
+#table {
+  width: 50%
+}
+
+#table div {
+  position: relative;
+  bottom: 29rem;
+  left: 2rem;
+}
+
+.vigenere-form {
+  display: flex;
+  flex-direction: column;
+}

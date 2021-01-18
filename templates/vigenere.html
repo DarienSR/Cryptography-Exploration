@@ -7,59 +7,62 @@
   </head>
   <body>
 
-    <div id="left">
-      <form action="./vigenere" method="POST">
-        <div>
-          <p class="bold">Plain Text: </p>
-          <input value="{{ data['plain_text'] }}" name="text" />
+    <div id="back-container">
+      <a href="../" id="back">HOME</a>
+    </div>
+
+    <h2>{{ data['name'] }}</h2>
+
+    <div id="content">
+      <div id="history">
+        <h3>History</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit modi, dolorum ipsam nesciunt ducimus officiis saepe expedita ullam magnam ratione! Quo tempore quod suscipit delectus. Necessitatibus non laboriosam similique asperiores?</p>
+      </div>
+
+      <div id="how-it-works">
+        <h3>How It Works</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui ducimus error, iure commodi minima nemo.</p>
+
+        <div id='container'>
+          <div id="left-vig">
+            <form class="vigenere-form" action="./vigenere" method="POST">
+              <div>
+                <p class="bold">Plain Text: </p>
+                <input value="{{ data['plain_text'] }}" name="text" />
+              </div>
+      
+              <div>
+                <p class="bold">Key Word: </p>
+                <input value="{{ data['keyword'] }}" name="key" />
+              </div>
+             
+              <input name="data" value="{{data}}" type="hidden" />
+              
+              <div id="button-container">
+                <button type='submit'>Update</button>
+              </div>
+              <input name="data" value="{{data}}" type="hidden" />
+            </form>
+
+            <div id="right-vig">
+              <p>Plain Text: {{ data['plain_text'] }}</p>
+             
+              <p>Key Word: {{ data['keyword_repeated'] }}</p>
+    
+              <p>Cipher Text: {{ data['cipher_text'] }}</p>
+            </div>
+          </div>
+  
+          <div id="table">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vigen%C3%A8re_square_shading.svg/330px-Vigen%C3%A8re_square_shading.svg.png" />
+            
+            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Vigen%C3%A8re_square_shading.svg/330px-Vigen%C3%A8re_square_shading.svg.png">Image Source</a>
+          </div>
+      
         </div>
-
-        <div>
-          <p class="bold">Key Word: </p>
-          <input value="{{ data['keyword'] }}" name="key" />
-        </div>
-       
-        <input name="data" value="{{data}}" type="hidden" />
-        
-        <div id="button-container">
-          <button type='submit'>Update</button>
-        </div>
-        <input name="data" value="{{data}}" type="hidden" />
-      </form>
+      </div>
     </div>
-
-    <h2>{{ data['name'] }} - needs styling</h2>
-
-
-    <div>
-      <p>Key Word:</p>
-      <p>{{ data['keyword'] }}</p>
-    </div>
-
-    <div>
-      <p>Plain Text:</p>
-      <p>{{ data['plain_text'] }}</p>
-    </div>
-
-    <div>
-      <p>Key Word:</p>
-      <p>{{ data['keyword_repeated'] }}</p>
-    </div>
-
-    <div>
-      <p>Cipher Text:</p>
-      <p>{{ data['cipher_text'] }}</p>
-    </div>
-
-    <div>
-      {%for i in range(0, 26) %}
-        <p>{{" ".join(data['table'][i])}}</p>
-      {% endfor %}
-    </div>
-
-
-
-
 
   </body>
 </html>

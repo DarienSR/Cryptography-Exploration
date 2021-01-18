@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import json
 from CaesarCipher import *
 from VigenereCipher import *
-app= Flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 def home():
