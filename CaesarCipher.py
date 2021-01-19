@@ -18,6 +18,41 @@ def Encrypt(ALPHABET, shiftBy, plainText):
       cipherText += " "
   return cipherText, " ".join(shifted_alphabet)
 
+def View(plain, shift, cipher, default_alphabet, shifted_alphabet):
+  return f"""
+  <div class="inline">
+    <div id="left">
+      <form action="./caesar" method="POST">
+        <div>
+          <p class="bold">Plain Text: </p>
+          <input value="{ plain }" name="text" />
+          
+          <p class="bold">Shift By: </p>
+          <input type="number" value="{ shift }" min=0 value=0 name="shift" />
+        </div>
+        
+        <div id="button-container">
+          <button type='submit'>Update</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="right">
+      <div>
+
+          <p><span class="bold">Default Alphabet:</span> { default_alphabet }</p>
+
+          <p><span class="bold">Shifted Alphabet:</span> { shifted_alphabet }</p>
+    
+        <div>
+          <p><span class="bold">Plain Text:</span> { plain }</p>
+          <p><span class="bold">Cipher Text:</span> { cipher }</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  """
+
 def GetCaesarCipher(shiftBy = 1, text = "attackatdawn"):
   ALPHABET = list(string.ascii_lowercase)
   shift = shiftBy
@@ -30,5 +65,7 @@ def GetCaesarCipher(shiftBy = 1, text = "attackatdawn"):
     "plain_text": plain,
     "shiftBy": shift,
     "shifted_alphabet": shiftedAlphabet,
-    "cipher_text": cipherText
+    "cipher_text": cipherText,
+    "view": View(plain, shift, cipherText, " ".join(ALPHABET), shiftedAlphabet)
   }
+

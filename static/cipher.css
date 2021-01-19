@@ -81,13 +81,24 @@ button {
 }
 
 #table {
-  width: 50%
+  width: 50%;
+  display: flex;
 }
 
-#table div {
-  position: relative;
-  bottom: 29rem;
-  left: 2rem;
+.y-axis {
+  padding-top: 1.1rem;
+}
+
+.y-axis p {
+  color: red;
+}
+
+.x-axis {
+  color: blue;
+}
+
+#table p {
+  margin: 0;
 }
 
 .vigenere-form {
